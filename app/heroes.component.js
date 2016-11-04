@@ -16,8 +16,10 @@ var HeroesComponent = (function () {
     function HeroesComponent(router, heroService) {
         this.router = router;
         this.heroService = heroService;
+        this.values = " ";
+        this.values2 = " ";
     }
-    // TODO: private is in AppComponent
+    // TODO: private is in HeroesComponent
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; }); //TODO: know the arrow function
@@ -28,6 +30,13 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     HeroesComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedHero.id]);
+    };
+    HeroesComponent.prototype.onKey = function (event) {
+        this.values += event.target.value + '|';
+    };
+    //
+    HeroesComponent.prototype.onKey_v2 = function (value) {
+        this.values += value + ' | ';
     };
     HeroesComponent = __decorate([
         core_1.Component({

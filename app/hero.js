@@ -5,4 +5,10 @@ var Hero = (function () {
     return Hero;
 }());
 exports.Hero = Hero;
+var Hoster = (function () {
+    function Hoster() {
+    }
+    return Hoster;
+}());
+exports.Hoster = Hoster;
 //# sourceMappingURL=hero.js.map

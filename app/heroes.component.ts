@@ -22,7 +22,7 @@ export class HeroesComponent implements OnInit {
     constructor(
         private router: Router,
         private heroService: HeroService) { }
-    // TODO: private is in AppComponent
+    // TODO: private is in HeroesComponent
 
     getHeroes() {
         this.heroService.getHeroes().then(heroes => this.heroes = heroes); //TODO: know the arrow function
@@ -36,6 +36,20 @@ export class HeroesComponent implements OnInit {
 
     gotoDetail() {
         this.router.navigate(['/detail', this.selectedHero.id]);
+    }
+
+
+
+    values = " ";
+    values2 = " ";
+    onKey(event:any) { // TODO: know the meaning of " event:any " 简化的写法。推荐使用TS的  “强类型机制”
+        this.values += event.target.value + '|';
+    }
+
+
+    //
+    onKey_v2(value: string) {
+        this.values += value + ' | ';
     }
 
 }

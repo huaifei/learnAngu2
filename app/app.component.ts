@@ -10,7 +10,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
         
         <nav>
             <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
-            <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>   
+            <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
         </nav>
         
         <router-outlet></router-outlet>

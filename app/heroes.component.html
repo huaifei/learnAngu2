@@ -14,6 +14,27 @@
     <button (click)="gotoDetail()">View Details</button>
 </div>
 
+<br>
+
+<input (keyup)="onKey($event)">
+<p>{{values}}</p>
 
 
-<!--<my-hero-detail [hero] = 'selectedHero'></my-hero-detail>-->
+<br>
+<p>Another keyup event:</p>
+<input #box (keyup)="0">
+{{box.value}}
+<!--在 <input> 元素上定义了一个名叫 box 的模板引用变量。 box 变量引用的就是 <input> 元素本身，这意味着我们可以获得 input 元素的 value 值，并通过插值表达式把它显示在 <p> 标签中。-->
+
+<br>
+<input #box1 (keyup)="onKey_v2(box1.value)">
+<p>{{values}}</p>
+
+<br>
+<input #box2
+       (keyup.enter)="values2=box2.value"
+       (blur)="values2=box2.value">
+<p>{{values2}}</p>
+
+
+
